@@ -5,7 +5,7 @@
 
 task main()
 {
-	int lightValue;
+	int lightValue; //declaring variables
 	int darkValue;
 	int sumValue;
 	int thresholdValue;
@@ -13,10 +13,10 @@ task main()
 	int countValue = 0;
 	int lastSeen;
 	int count2=0;
-	nMotorPIDSpeedCtrl[motorA] = mtrSpeedReg;
+	nMotorPIDSpeedCtrl[motorA] = mtrSpeedReg; //ensuring that the motors are moving at same speed
 	nMotorPIDSpeedCtrl[motorB] = mtrSpeedReg;
 
-	darkValue=47;
+	darkValue=47; 
 	lightValue=79;
 	sumValue = lightValue + darkValue;
 	thresholdValue = sumValue/2; // determining threshold value
@@ -27,9 +27,9 @@ task main()
 
 	while(count2 <3){
 
-	while (countValue < 9)//entering while loop
+	while (countValue < 9)//entering while loop, determining when to turn
 	{
-		if (SensorValue(lightSensor) > thresholdValue)
+		if (SensorValue(lightSensor) > thresholdValue) //initate movement 
 		{
 			 motor[motorA]=30;
 			 motor[motorB]=30;
@@ -52,7 +52,7 @@ task main()
 	}//end while
 
 
-	     motor[motorA]=30;
+	     motor[motorA]=30; //turning on the gride 
 			 motor[motorB]=-30;
 			 wait1Msec(600);
 
@@ -69,7 +69,7 @@ task main()
 
 	while (countValue < 9)
 	{
-		if (SensorValue(lightSensor) > thresholdValue)
+		if (SensorValue(lightSensor) > thresholdValue) //intiating movement after first turn
 		{
 			 motor[motorA]=30;
 			 motor[motorB]=30;
